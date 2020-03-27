@@ -3,8 +3,8 @@ import { StyleSheet, View, ScrollView, Text, Image } from "react-native"
 import { Divider } from "react-native-elements"
 import { withNavigation } from "react-navigation"
 
-export default function Login() {
-    
+export default function Login(props) {
+    const {navigation} = props
     return (
         <ScrollView>
             <Image
@@ -15,7 +15,7 @@ export default function Login() {
             <View style={styles.viewContain}>
               <Text>Form Login...</Text>
                 {/* <Text>Create account...</Text> */}
-                <CreateAccount />
+                <CreateAccount navigation={navigation}/>
                 
             </View>
             <Divider style={styles.divider}></Divider>
@@ -28,7 +28,7 @@ export default function Login() {
 }
 
 function CreateAccount(props) {
-    const { } = props
+    const { navigation } = props
     
     return (
         <>
@@ -36,7 +36,8 @@ function CreateAccount(props) {
             ¿Aún no tienes una cuenta?
         </Text>
         <Text style={styles.btnRegister}
-        onPress={()=> console.log("Navegando al formulario de registro") }>
+                onPress={() => navigation.navigate("Register") }
+        >
                 Registrarte
         </Text>
             </>
