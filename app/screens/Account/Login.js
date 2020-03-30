@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { StyleSheet, View, ScrollView, Text, Image } from "react-native"
 import { Divider } from "react-native-elements"
 import { withNavigation } from "react-navigation"
+import LoginForm from "../../components/Account/LoginForm"
+import Toast from "react-native-easy-toast"
+import LoginFacebook from "../../components/Account/LoginFacebook"
+
 
 export default function Login(props) {
-    const {navigation} = props
+    const { navigation } = props
+    const toastRef = useRef()
+
     return (
         <ScrollView>
             <Image
@@ -13,15 +19,16 @@ export default function Login(props) {
             resizeMode="contain"
             />
             <View style={styles.viewContain}>
-              <Text>Form Login...</Text>
+                <LoginForm toastRef={toastRef}/>
                 {/* <Text>Create account...</Text> */}
                 <CreateAccount navigation={navigation}/>
                 
             </View>
             <Divider style={styles.divider}></Divider>
             <View style={styles.viewContain}>
-                <Text>Login Facebook...</Text>
+                <LoginFacebook toastRef={toastRef} navigation={navigation}/>
             </View>
+            <Toast ref={toastRef} position="center" opacity={0.5}/>
         </ScrollView>
     )
 
