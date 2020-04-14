@@ -83,7 +83,7 @@ export default function Restaurants(props) {
 
   return (
     <View style={styles.viewBody}>
-      <ListRestaurants restaurants={restaurants} isLoading={isLoading} handleLoadMore={handleLoadMore}/>
+      <ListRestaurants restaurants={restaurants} isLoading={isLoading} handleLoadMore={handleLoadMore} navigation={navigation}/>
       {user && <AddRestaurantButton navigation={navigation} setIsReloadRestaurants={setIsReloadRestaurants}/>}
       </View>
   );

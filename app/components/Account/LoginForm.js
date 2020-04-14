@@ -23,8 +23,7 @@ function LoginForm(props) {
             if (!validateEmail(email)) {
                 toastRef.current.show("El email no es correcto")
             } else {
-                console.log(email)
-                console.log(password);
+                
                 
                 await firebase
                     .auth()
