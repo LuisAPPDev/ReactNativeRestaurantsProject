@@ -323,7 +323,7 @@ function Map(props) {
                         buttonStyle={styles.viewMapBtnSave}
                     />
                     <Button
-                        title="Cancelar ubicacion"
+                        title="Cancelar ubicación"
                         onPress={() => setIsVisibleMap(false)}
                         containerStyle={styles.viewMapBtnContainerCancel}
                         buttonStyle={styles.viewMapBtnCancel}
